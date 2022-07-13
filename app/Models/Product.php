@@ -17,12 +17,14 @@ class Product extends Model
         'description',
         'provider_id',
         'photo',
-
-
-
     ];
 
     protected $guarded = ['id'];
+
+    protected $casts = [
+        'updated_at'  => 'date:d-m-Y',
+        'created_at' => 'date:d-m-Y',
+    ];
 
     public function provider()
     {
